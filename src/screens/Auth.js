@@ -125,35 +125,17 @@ const Auth = ({navigation, data}) => {
                 style={{width: '100%', color: 'black'}}
                 autoCapitalize="none"
                 keyboardType={'numeric'}
+                maxLength={10}
                 placeholder={'Enter Contact'}
               />
-              {/* <ScrollView>
-                <GooglePlacesAutocomplete
-                  placeholder="Search"
-                  onPress={(data, details = null) => {
-                    // 'details' is provided when fetchDetails = true
-                    console.log(data, details);
-                  }}
-                  query={{
-                    key: API_KEY,
-                    language: 'en',
-                  }}
-                  onPress={(data, details = null) => console.log(data)}
-                  onFail={error => console.error(error)}
-                  requestUrl={{
-                    url: 'https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api',
-                    // useOnPlatform: 'web',
-                  }}
-                />
-              </ScrollView> */}
 
-              <TextInput
-                placeholder="Search for an address"
-                returnKeyType="search"
-                style={styles.searchBox}
-                placeholderTextColor="#000"
+              <CustomTextInput
                 onChangeText={text => searchLocation(text)}
                 value={searchKeyword}
+                style={{width: '100%', color: 'black'}}
+                autoCapitalize="none"
+                returnKeyType="search"
+                placeholder={'Search for an address'}
               />
               {isShowingResults && (
                 <FlatList
